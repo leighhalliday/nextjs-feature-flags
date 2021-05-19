@@ -1,5 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { checkAll } from "@src/flags";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  res.status(200).json({});
+  const flags = await checkAll();
+  res.status(200).json(flags);
 };

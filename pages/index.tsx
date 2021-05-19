@@ -1,7 +1,6 @@
+import { useFlag } from "@src/useFlag";
+
 export default function Home() {
-  return (
-    <div>
-      <button>Login</button>
-    </div>
-  );
+  const login = useFlag("login");
+  return <div>{login ? <button>Login</button> : null}</div>;
 }
